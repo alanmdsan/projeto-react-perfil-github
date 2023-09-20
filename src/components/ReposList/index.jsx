@@ -6,6 +6,7 @@ const ReposList = ({ nomeUsuario }) => {
     
     const [repos, setRepos] = useState([])
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         setLoading(true)
@@ -13,9 +14,13 @@ const ReposList = ({ nomeUsuario }) => {
         .then(res => res.json())
         .then(resJson => {
             setTimeout(() => {
+                setError(false)
                 setRepos(resJson)
                 setLoading(false)
             }, 2500)
+        })
+        .catch(e => {
+            setError(true)
         })
     }, [nomeUsuario])
 

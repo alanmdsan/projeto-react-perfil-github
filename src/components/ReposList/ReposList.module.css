@@ -1,13 +1,17 @@
 .list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
+    gap: 8px;
 }
 
 .listItem {
     list-style: none;
     padding: 16px;
     border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.itemName, .itemLanguage {
+    font-size: 14px;
 }
 
 .itemName b, .itemLanguage b {
